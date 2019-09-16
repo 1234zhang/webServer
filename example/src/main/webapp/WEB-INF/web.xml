@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<web-app>
+    <servlet>
+        <servlet-name>test</servlet-name>
+        <servlet-class>com.xcc.client.example.controller.TestServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>jump</servlet-name>
+        <servlet-class>com.xcc.client.example.controller.JumpServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>DefaultServlet</servlet-name>
+        <servlet-class>com.xcc.server.core.servlet.lmp.DefaultServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>DefaultServlet</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>jump</servlet-name>
+        <url-pattern>/jump</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>test</servlet-name>
+        <url-pattern>/hello</url-pattern>
+    </servlet-mapping>
+
+
+
+    <listener>
+        <listener-class>com.xcc.client.example.listener.ServletContextAndSessionListener</listener-class>
+        <listener-class>com.xcc.client.example.listener.MyServletRequestListener</listener-class>
+    </listener>
+</web-app>
