@@ -2,6 +2,8 @@ package com.xcc.server.core.network.endpoint;
 
 import org.springframework.util.StringUtils;
 
+import java.io.IOException;
+
 /**
  * @author Brandon.
  * @date 2019/9/7.
@@ -14,7 +16,7 @@ public abstract class BaseEndPoint {
      * 启动服务器
      * @param port 服务器端口号
      */
-    public abstract void start( int port);
+    public abstract void start( int port) throws IOException;
 
     /**
      * 关闭服务器

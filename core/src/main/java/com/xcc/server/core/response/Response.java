@@ -11,6 +11,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 
+import java.nio.ByteBuffer;
 import java.security.cert.CRL;
 import java.util.ArrayList;
 import java.util.Date;
@@ -138,5 +139,11 @@ public class Response {
      */
     public void setRequestHandle(BaseRequestHandle requestHandle){
         this.requestHandle = requestHandle;
+    }
+
+    public ByteBuffer[] getResponseByteBuffer(){
+        buildResponse();
+        byte[] header = this.headerAppender.toString().getBytes(UTF_8_CHARSET);
+        return new ByteBuffer[]{ByteBuffer.wrap(header), ByteBuffer.wrap(body)};
     }
 }

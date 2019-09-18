@@ -48,7 +48,7 @@ public class NioPoller implements Runnable{
      * @param isNewSocket
      */
     public void register(SocketChannel socketChannel, boolean isNewSocket){
-        NioSocketWrapper wrapper = null;
+        NioSocketWrapper wrapper;
         log.info("将Acceptor连接到的socketChannel 推入{} 中的queue中", pollerName);
         if(isNewSocket){
             wrapper = new NioSocketWrapper(nioEndPoint, socketChannel, this, isNewSocket);
@@ -77,7 +77,7 @@ public class NioPoller implements Runnable{
         while(nioEndPoint.isRunning()){
             try {
                 events();
-                if(selector.select() <= 0){
+                if(selector.select() == 0){
                     continue;
                 }
                 log.info("selector.select()接收到通道数据，开启所有消息监听器");
@@ -107,7 +107,7 @@ public class NioPoller implements Runnable{
         attachment.setWorking(true);
         nioEndPoint.executor(attachment);
     }
-    private void cleanTimeOutSockets(){
+    public void cleanTimeOutSockets(){
         for (Iterator<Map.Entry<SocketChannel, NioSocketWrapper>> it = sockets.entrySet().iterator(); it.hasNext();){
             NioSocketWrapper wrapper = it.next().getValue();
             log.info("缓存中的socket : {}", wrapper);
@@ -135,8 +135,7 @@ public class NioPoller implements Runnable{
         log.info("Queue 大小为 {}, 清空Queue，将连接到的socketChannel注册到selector中", events.size());
         PollerEvent pollerEvent;
         for (int i = 0, size = events.size(); i < size && (pollerEvent = events.poll()) != null; i++){
-            Thread t = new Thread(pollerEvent);
-            t.start();
+            pollerEvent.run();
         }
     }
 

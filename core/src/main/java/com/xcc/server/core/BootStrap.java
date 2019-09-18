@@ -4,6 +4,7 @@ import com.xcc.server.core.network.endpoint.BaseEndPoint;
 import com.xcc.server.core.util.PropertiesUtil;
 import lombok.extern.slf4j.Slf4j;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 
@@ -16,7 +17,7 @@ import java.util.Scanner;
 
 @Slf4j
 public class BootStrap {
-    public static void run(){
+    public static void run() throws IOException {
         String port = PropertiesUtil.getProperty("server.port");
         if(port == null){
             throw new IllegalArgumentException("server.port 不存在-.-");
