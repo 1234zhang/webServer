@@ -1,24 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="46c87f0b-874a-4b5a-9217-e91fbe41495f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/xcc/server/core/network/connector/nio/IdeConnectionCleaner.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/xcc/server/core/network/connector/nio/IdeConnectionCleaner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/xcc/server/core/network/connector/nio/NioPoller.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/xcc/server/core/network/connector/nio/NioPoller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/xcc/server/core/network/dispatchar/nio/NioDispatcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/xcc/server/core/network/dispatchar/nio/NioDispatcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/xcc/server/core/network/endpoint/nio/NioEndPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/xcc/server/core/network/endpoint/nio/NioEndPoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/xcc/server/core/network/handle/nio/NioRequestHandle.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/xcc/server/core/network/handle/nio/NioRequestHandle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/xcc/server/core/network/wrapper/nio/NioSocketWrapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/xcc/server/core/network/wrapper/nio/NioSocketWrapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/xcc/server/core/request/Request.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/xcc/server/core/request/Request.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/com/xcc/server/core/network/wrapper/nio/NioSocketWrapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/xcc/server/core/network/wrapper/nio/NioSocketWrapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/com/xcc/server/core/request/Request.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/xcc/server/core/request/Request.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/core-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/core-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/src/main/resources/server.properties" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/main/resources/server.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/src/main/webapp/views/hello.html" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/main/webapp/views/hello.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/src/main/webapp/views/jump.html" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/main/webapp/views/jump.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/target/classes/server.properties" beforeDir="false" afterPath="$PROJECT_DIR$/example/target/classes/server.properties" afterDir="false" />
-    </list>
+    <list default="true" id="46c87f0b-874a-4b5a-9217-e91fbe41495f" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/core/target/" />
@@ -55,7 +38,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/src/main/java/com/xcc/server/core/network/connector/nio/IdeConnectionCleaner.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
+            <state relative-caret-position="357">
               <caret line="37" column="13" lean-forward="true" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -755,12 +738,12 @@
       <workItem from="1568337064538" duration="238000" />
       <workItem from="1568469429544" duration="600000" />
       <workItem from="1568542558174" duration="2113000" />
-      <workItem from="1568636452714" duration="45928000" />
+      <workItem from="1568636452714" duration="46640000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="127924000" />
+    <option name="totallyTimeSpent" value="128636000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -786,7 +769,7 @@
       <window_info id="Web" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32210243" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32210243" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.393531" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -794,7 +777,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32884097" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.31266847" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.31266847" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.32833788" />
@@ -1243,7 +1226,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/main/java/com/xcc/server/core/network/connector/nio/IdeConnectionCleaner.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
+        <state relative-caret-position="357">
           <caret line="37" column="13" lean-forward="true" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />

@@ -6,9 +6,6 @@ import com.xcc.server.core.network.connector.nio.NioPoller;
 import com.xcc.server.core.network.dispatchar.nio.NioDispatcher;
 import com.xcc.server.core.network.endpoint.BaseEndPoint;
 import com.xcc.server.core.network.wrapper.nio.NioSocketWrapper;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
