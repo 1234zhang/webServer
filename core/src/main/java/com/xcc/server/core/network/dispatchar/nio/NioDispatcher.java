@@ -1,5 +1,6 @@
 package com.xcc.server.core.network.dispatchar.nio;
 
+import com.xcc.server.core.context.WebApplication;
 import com.xcc.server.core.exception.*;
 import com.xcc.server.core.exception.base.ServletException;
 import com.xcc.server.core.network.dispatchar.BaseDispatcher;
@@ -49,9 +50,11 @@ public class NioDispatcher extends BaseDispatcher{
                 baos.write(buffer.array());
             }
             baos.close();
-            response = new Response();
-            request = new Request(baos.toByteArray());
-            pool.execute(new NioRequestHandle(request, response,wrapper, servletContext, exceptionHandle,resourceHandle));
+            if(baos.size() > 0) {
+                response = new Response();
+                request = new Request(baos.toByteArray());
+                pool.execute(new NioRequestHandle(request, response, wrapper, servletContext, exceptionHandle, resourceHandle));
+            }
         } catch (IOException e) {
             e.printStackTrace();
             exceptionHandle.handle(new ServerErrorException(), response,  wrapper);

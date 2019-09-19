@@ -31,7 +31,7 @@ import java.util.List;
 @Setter
 @Slf4j
 public class NioRequestHandle extends BaseRequestHandle {
-    public NioRequestHandle(Request request, Response response, SocketWrapper socketWrapper, ServletContext servletContext, ExceptionHandle exceptionHandle, ResourceHandle resourceHandle) throws ServletNotFoundException, ResourceNotFoundException, InstantiationException, IllegalAccessException, ClassNotFoundException, FilterNotFoundException {
+    public NioRequestHandle(Request request, Response response, SocketWrapper socketWrapper, ServletContext servletContext, ExceptionHandle exceptionHandle, ResourceHandle resourceHandle) throws ServletNotFoundException, ResourceNotFoundException, FilterNotFoundException, IllegalAccessException, ClassNotFoundException, InstantiationException {
         super(request, response, socketWrapper, servletContext, exceptionHandle, resourceHandle);
     }
 
@@ -40,7 +40,7 @@ public class NioRequestHandle extends BaseRequestHandle {
      */
     @Override
     public void flushResponse() {
-        boolean isFinish = true;
+        isFinished = true;
         NioSocketWrapper wrapper = (NioSocketWrapper) socketWrapper;
         ByteBuffer[] buffer = response.getResponseByteBuffer();
         try {
@@ -56,6 +56,6 @@ public class NioRequestHandle extends BaseRequestHandle {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        WebApplication.getServletContext().afterRequestCreate(request);
+        WebApplication.getServletContext().afterRequestDestroyed(request);
     }
 }

@@ -77,7 +77,7 @@ public class NioPoller implements Runnable{
         while(nioEndPoint.isRunning()){
             try {
                 events();
-                if(selector.select() == 0){
+                if(selector.select() <= 0){
                     continue;
                 }
                 log.info("selector.select()接收到通道数据，开启所有消息监听器");
@@ -120,7 +120,7 @@ public class NioPoller implements Runnable{
                 log.info("该socket {} 正在工作， 不给予关闭 ", wrapper.getSocket());
                 continue;
             }
-            if(System.currentTimeMillis() - wrapper.getWaitBegin() >= nioEndPoint.getKeepAliveTimeout()){
+            if(System.currentTimeMillis() - wrapper.getWaitBegin() > nioEndPoint.getKeepAliveTimeout()){
                 log.info("{} keepAlive 已经过期，将会被清除", wrapper.getSocket());
                 try {
                     wrapper.close();

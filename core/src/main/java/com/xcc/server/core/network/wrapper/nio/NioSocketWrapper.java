@@ -17,7 +17,6 @@ import java.nio.channels.SocketChannel;
  */
 
 @Data
-@ToString
 public class NioSocketWrapper implements SocketWrapper {
 
     private final NioEndPoint server;
@@ -38,5 +37,10 @@ public class NioSocketWrapper implements SocketWrapper {
     public void close() throws IOException {
         socket.keyFor(poller.getSelector()).cancel();
         socket.close();
+    }
+
+    @Override
+    public String toString(){
+        return this.socket.toString();
     }
 }

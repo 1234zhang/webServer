@@ -12,7 +12,6 @@ import java.util.concurrent.*;
  * @time 21:13.
  */
 
-@Data
 @Slf4j
 public class IdeConnectionCleaner implements Runnable{
     private ScheduledExecutorService executor;
@@ -30,7 +29,7 @@ public class IdeConnectionCleaner implements Runnable{
             }
         };
         executor = Executors.newSingleThreadScheduledExecutor(factory);
-        executor.scheduleAtFixedRate(this, 0, 5, TimeUnit.SECONDS);
+        executor.scheduleWithFixedDelay(this, 0, 5, TimeUnit.SECONDS);
     }
 
     public void shutdown(){

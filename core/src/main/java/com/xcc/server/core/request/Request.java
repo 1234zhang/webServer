@@ -125,10 +125,11 @@ public class Request {
      * @param lines
      */
     private void parseHandle(String[] lines){
-        log.info("解析请求头");
+        log.info("解析请求头 : {}", lines);
         String firstLine = lines[0];
         // 解析方法
         String[] firstLineSplit = firstLine.split(CharContant.BLANK);
+
         this.method = RequestMethod.valueOf(firstLineSplit[0]);
         log.debug("method : {} " , method);
 

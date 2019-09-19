@@ -25,8 +25,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @time 21:11.
  */
 
-@Getter
-@Setter
+
 @Slf4j
 public class NioEndPoint extends BaseEndPoint {
     private volatile boolean  isRunning = true;
@@ -42,7 +41,7 @@ public class NioEndPoint extends BaseEndPoint {
     /**
      * 设置过时事件
      */
-    private long keepAliveTimeout = 6 * 1000L;
+    private int keepAliveTimeout = 6 * 1000;
 
     /**
      * 如果长时间没有数据传输，则关闭连接
@@ -82,17 +81,18 @@ public class NioEndPoint extends BaseEndPoint {
         cleaner.start();
     }
     @Override
-    public void start(int port) throws IOException {
+    public void start(int port) {
         log.info("启动服务器");
         try {
             initDispatcher();
             initServerSocket(port);
-                initCleaner();
             initPoller();
             initAcceptor();
+            initCleaner();
             log.info("服务器初始化完毕。。。。。。。");
         } catch (IOException e) {
             e.printStackTrace();
+            log.info("初始化失败");
             close();
         }
     }
@@ -142,7 +142,7 @@ public class NioEndPoint extends BaseEndPoint {
      * @return
      */
     public NioPoller getPoller(){
-        int id = Math.abs(pollerRotater.incrementAndGet() % pollers.size());
+        int id = Math.abs(pollerRotater.incrementAndGet()) % pollers.size();
         return pollers.get(id);
     }
 
@@ -161,7 +161,7 @@ public class NioEndPoint extends BaseEndPoint {
         server.configureBlocking(true);
     }
 
-    public long getKeepAliveTimeout(){
+    public int getKeepAliveTimeout(){
         return this.keepAliveTimeout;
     }
 }
